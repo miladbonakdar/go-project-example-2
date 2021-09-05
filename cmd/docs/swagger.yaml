@@ -1,0 +1,2534 @@
+basePath: /
+definitions:
+  dto.AmenityCategoriesResponse:
+    properties:
+      categories:
+        items:
+          $ref: '#/definitions/dto.AmenityCategoryDto'
+        type: array
+    type: object
+  dto.AmenityCategoryDto:
+    properties:
+      error:
+        $ref: '#/definitions/indraframework.IndraException'
+        type: object
+      iconUrl:
+        type: string
+      id:
+        type: integer
+      name:
+        type: string
+      nameEn:
+        type: string
+      order:
+        type: integer
+    type: object
+  dto.AvailableDto:
+    properties:
+      checkIn:
+        type: string
+      checkOut:
+        type: string
+      hotelId:
+        type: string
+      lateCheckIn:
+        type: string
+      nationalId:
+        type: string
+      optionId:
+        type: string
+      phoneNumber:
+        type: string
+      rooms:
+        items:
+          $ref: '#/definitions/dto.AvailableRoomDto'
+        type: array
+      sessionId:
+        type: string
+    type: object
+  dto.AvailableResponseDto:
+    properties:
+      IndraOrderId:
+        type: integer
+      checkIn:
+        type: string
+      checkOut:
+        type: string
+      error:
+        $ref: '#/definitions/indraframework.IndraException'
+        type: object
+      optionId:
+        type: string
+      orderId:
+        type: string
+      status:
+        type: string
+      totalPrice:
+        type: integer
+    type: object
+  dto.AvailableRoomAdultDto:
+    properties:
+      cellphone:
+        type: string
+      firstName:
+        type: string
+      lastName:
+        type: string
+      nationalId:
+        type: string
+      passport:
+        $ref: '#/definitions/dto.AvailableRoomPassportDto'
+        type: object
+      title:
+        type: string
+    type: object
+  dto.AvailableRoomChildrenDto:
+    properties:
+      firstName:
+        type: string
+      lastName:
+        type: string
+      nationalId:
+        type: string
+      passport:
+        $ref: '#/definitions/dto.AvailableRoomPassportDto'
+        type: object
+      title:
+        type: string
+    type: object
+  dto.AvailableRoomDto:
+    properties:
+      adults:
+        items:
+          $ref: '#/definitions/dto.AvailableRoomAdultDto'
+        type: array
+      children:
+        items:
+          $ref: '#/definitions/dto.AvailableRoomChildrenDto'
+        type: array
+    type: object
+  dto.AvailableRoomPassportDto:
+    properties:
+      countryResidency:
+        type: string
+      expiryDate:
+        type: string
+      number:
+        type: string
+    type: object
+  dto.BalanceDto:
+    properties:
+      balance:
+        type: number
+      error:
+        $ref: '#/definitions/indraframework.IndraException'
+        type: object
+    type: object
+  dto.ChildAgeRangeDto:
+    properties:
+      name:
+        type: string
+      value:
+        type: integer
+    type: object
+  dto.CityDto:
+    properties:
+      baseId:
+        type: integer
+      country:
+        type: string
+      id:
+        type: string
+      name:
+        type: string
+      state:
+        type: string
+    type: object
+  dto.ConfirmResponseDto:
+    properties:
+      error:
+        $ref: '#/definitions/indraframework.IndraException'
+        type: object
+      orderId:
+        type: string
+    type: object
+  dto.DeleteAmenityCategoryResponse:
+    properties:
+      error:
+        $ref: '#/definitions/indraframework.IndraException'
+        type: object
+      id:
+        type: integer
+    type: object
+  dto.FilterDto:
+    properties:
+      key:
+        type: string
+      value:
+        type: integer
+    type: object
+  dto.FilterOutput:
+    properties:
+      field:
+        type: string
+      filters:
+        items:
+          $ref: '#/definitions/dto.FilterDto'
+        type: array
+      name:
+        type: string
+    type: object
+  dto.FiltersDto:
+    properties:
+      amenity_filters:
+        $ref: '#/definitions/dto.FilterOutput'
+        type: object
+      hotel_types:
+        $ref: '#/definitions/dto.FilterOutput'
+        type: object
+      price_filters:
+        $ref: '#/definitions/dto.FilterOutput'
+        type: object
+      score_filters:
+        $ref: '#/definitions/dto.FilterOutput'
+        type: object
+      star_filters:
+        $ref: '#/definitions/dto.FilterOutput'
+        type: object
+    type: object
+  dto.FinalizeOrderDto:
+    properties:
+      orderId:
+        type: string
+    type: object
+  dto.FinalizeOrderResponseDto:
+    properties:
+      error:
+        $ref: '#/definitions/indraframework.IndraException'
+        type: object
+      paymentResult:
+        $ref: '#/definitions/dto.OrderPayByAccountResponseDto'
+        type: object
+      statusResult:
+        $ref: '#/definitions/dto.OrderStatusResponseDto'
+        type: object
+    type: object
+  dto.FindHotelResponseDto:
+    properties:
+      error:
+        $ref: '#/definitions/indraframework.IndraException'
+        type: object
+      hotels:
+        items:
+          $ref: '#/definitions/dto.HotelDto'
+        type: array
+    type: object
+  dto.HotelAmenityDto:
+    properties:
+      amenityCategory:
+        $ref: '#/definitions/dto.AmenityCategoryDto'
+        type: object
+      amenityCategoryID:
+        type: integer
+      error:
+        $ref: '#/definitions/indraframework.IndraException'
+        type: object
+      groupId:
+        type: integer
+      iconUrl:
+        type: string
+      id:
+        type: integer
+      name:
+        type: string
+      nameEn:
+        type: string
+    type: object
+  dto.HotelBadgeDto:
+    properties:
+      backgroundColor:
+        type: string
+      error:
+        $ref: '#/definitions/indraframework.IndraException'
+        type: object
+      icon:
+        type: string
+      id:
+        type: string
+      text:
+        type: string
+      textColor:
+        type: string
+    type: object
+  dto.HotelDetailsDto:
+    properties:
+      checkIn:
+        type: string
+      checkOut:
+        type: string
+      hotelId:
+        type: string
+      rooms:
+        items:
+          $ref: '#/definitions/dto.RequestRoomDto'
+        type: array
+      skipLoadingRooms:
+        type: boolean
+    type: object
+  dto.HotelDto:
+    properties:
+      DiscountPrice:
+        type: integer
+      address:
+        type: string
+      amenities:
+        items:
+          $ref: '#/definitions/dto.HotelAmenityDto'
+        type: array
+      badges:
+        items:
+          $ref: '#/definitions/dto.HotelBadgeDto'
+        type: array
+      capacity:
+        type: integer
+      checkIn:
+        type: string
+      checkInTime:
+        type: string
+      checkOut:
+        type: string
+      checkOutTime:
+        type: string
+      city:
+        type: string
+      cityEn:
+        type: string
+      code:
+        type: integer
+      country:
+        type: string
+      countryCode:
+        type: string
+      countryEn:
+        type: string
+      createdAt:
+        type: string
+      description:
+        type: string
+      discountPercent:
+        type: integer
+      error:
+        $ref: '#/definitions/indraframework.IndraException'
+        type: object
+      faq:
+        $ref: '#/definitions/dto.HotelFAQDetailsDto'
+        type: object
+      geoLocation:
+        type: string
+      images:
+        items:
+          type: string
+        type: array
+      kind:
+        type: string
+      min_night:
+        type: integer
+      name:
+        type: string
+      nameEn:
+        type: string
+      oldPrice:
+        type: integer
+      options:
+        items:
+          $ref: '#/definitions/dto.RoomOptionDto'
+        type: array
+      payment_type:
+        type: string
+      placeId:
+        type: string
+      places:
+        items:
+          $ref: '#/definitions/dto.HotelPlaceDto'
+        type: array
+      price:
+        type: integer
+      province:
+        type: string
+      provinceEn:
+        type: string
+      rateReviewCount:
+        type: integer
+      rateReviewScore:
+        type: number
+      region:
+        type: string
+      reservation_type:
+        type: string
+      roomId:
+        type: string
+      seo:
+        $ref: '#/definitions/dto.HotelSeoDto'
+        type: object
+      sessionId:
+        type: string
+      sort:
+        type: number
+      star:
+        type: integer
+      suitable_for:
+        items:
+          type: string
+        type: array
+      tags:
+        items:
+          type: string
+        type: array
+      type:
+        type: string
+      unavailableAmenities:
+        items:
+          $ref: '#/definitions/dto.HotelAmenityDto'
+        type: array
+      updatedAt:
+        type: string
+      verified:
+        type: boolean
+    type: object
+  dto.HotelFAQDetailsDto:
+    properties:
+      faq:
+        items:
+          $ref: '#/definitions/dto.HotelFAQDto'
+        type: array
+      title:
+        type: string
+    type: object
+  dto.HotelFAQDto:
+    properties:
+      answer:
+        type: string
+      id:
+        type: integer
+      question:
+        type: string
+    type: object
+  dto.HotelInput:
+    properties:
+      hotel-Ids:
+        items:
+          type: string
+        type: array
+    type: object
+  dto.HotelPDPDto:
+    properties:
+      DiscountPrice:
+        type: integer
+      address:
+        type: string
+      amenities:
+        items:
+          $ref: '#/definitions/dto.HotelAmenityDto'
+        type: array
+      badges:
+        items:
+          $ref: '#/definitions/dto.HotelBadgeDto'
+        type: array
+      capacity:
+        type: integer
+      checkIn:
+        type: string
+      checkInTime:
+        type: string
+      checkOut:
+        type: string
+      checkOutTime:
+        type: string
+      city:
+        type: string
+      cityEn:
+        type: string
+      code:
+        type: integer
+      country:
+        type: string
+      countryCode:
+        type: string
+      countryEn:
+        type: string
+      createdAt:
+        type: string
+      description:
+        type: string
+      discountPercent:
+        type: integer
+      error:
+        $ref: '#/definitions/indraframework.IndraException'
+        type: object
+      faq:
+        $ref: '#/definitions/dto.HotelFAQDetailsDto'
+        type: object
+      geoLocation:
+        type: string
+      images:
+        items:
+          type: string
+        type: array
+      kind:
+        type: string
+      min_night:
+        type: integer
+      name:
+        type: string
+      nameEn:
+        type: string
+      oldPrice:
+        type: integer
+      options:
+        items:
+          $ref: '#/definitions/dto.RoomOptionDto'
+        type: array
+      payment_type:
+        type: string
+      placeId:
+        type: string
+      places:
+        items:
+          $ref: '#/definitions/dto.HotelPlaceDto'
+        type: array
+      price:
+        type: integer
+      province:
+        type: string
+      provinceEn:
+        type: string
+      rateReviewCount:
+        type: integer
+      rateReviewScore:
+        type: number
+      region:
+        type: string
+      requestedRooms:
+        items:
+          $ref: '#/definitions/dto.RequestRoomDto'
+        type: array
+      reservation_type:
+        type: string
+      roomId:
+        type: string
+      seo:
+        $ref: '#/definitions/dto.HotelSeoDto'
+        type: object
+      sessionId:
+        type: string
+      sort:
+        type: number
+      star:
+        type: integer
+      suitable_for:
+        items:
+          type: string
+        type: array
+      tags:
+        items:
+          type: string
+        type: array
+      type:
+        type: string
+      unavailableAmenities:
+        items:
+          $ref: '#/definitions/dto.HotelAmenityDto'
+        type: array
+      updatedAt:
+        type: string
+      verified:
+        type: boolean
+    type: object
+  dto.HotelPlaceDto:
+    properties:
+      distance:
+        type: number
+      geo_location:
+        type: string
+      id:
+        type: string
+      name:
+        type: string
+      priority:
+        type: integer
+    type: object
+  dto.HotelRoomsDto:
+    properties:
+      checkIn:
+        type: string
+      checkOut:
+        type: string
+      hotelId:
+        type: string
+      rooms:
+        items:
+          $ref: '#/definitions/dto.RequestRoomDto'
+        type: array
+    type: object
+  dto.HotelRoomsWithSessionDto:
+    properties:
+      hotelId:
+        type: string
+      sessionId:
+        type: string
+    type: object
+  dto.HotelSeoDto:
+    properties:
+      canonical:
+        type: string
+      description:
+        type: string
+      h1:
+        type: string
+      metaDescription:
+        type: string
+      robots:
+        type: string
+      title:
+        type: string
+    type: object
+  dto.HotelSyncDetail:
+    properties:
+      createdAt:
+        type: string
+      placeId:
+        type: string
+      price:
+        type: integer
+      updatedAt:
+        type: string
+    type: object
+  dto.HotelsPageRequestDto:
+    properties:
+      pageNumber:
+        type: integer
+      pageSize:
+        type: integer
+      search:
+        type: string
+    type: object
+  dto.HotelsPageResponseDto:
+    properties:
+      error:
+        $ref: '#/definitions/indraframework.IndraException'
+        type: object
+      hotels:
+        items:
+          $ref: '#/definitions/dto.HotelDto'
+        type: array
+      pageNumber:
+        type: integer
+      pageSize:
+        type: integer
+      total:
+        type: integer
+    type: object
+  dto.MealPlanTypeDto:
+    properties:
+      key:
+        type: string
+      name:
+        type: string
+      nameEn:
+        type: string
+    type: object
+  dto.OptionCancellationDto:
+    properties:
+      GeneralPolicies:
+        items:
+          type: string
+        type: array
+      nonRefundable:
+        type: boolean
+    type: object
+  dto.OptionInfoDetailDto:
+    properties:
+      currency:
+        type: string
+      hotelId:
+        type: string
+      mealPlan:
+        type: string
+      price:
+        type: integer
+      provider:
+        type: string
+      restrictedMarkup:
+        $ref: '#/definitions/dto.OptionInfoDetailRestrictedMarkupDto'
+        type: object
+      rooms:
+        items:
+          $ref: '#/definitions/dto.OptionInfoDetailRoomDto'
+        type: array
+    type: object
+  dto.OptionInfoDetailRestrictedMarkupDto:
+    properties:
+      amount:
+        type: integer
+      type:
+        type: string
+    type: object
+  dto.OptionInfoDetailRoomDto:
+    properties:
+      name:
+        type: string
+    type: object
+  dto.OptionInfoRequestDto:
+    properties:
+      hotelId:
+        type: string
+      optionId:
+        type: string
+      sessionId:
+        type: string
+    type: object
+  dto.OptionInfoResponseDto:
+    properties:
+      detail:
+        $ref: '#/definitions/dto.OptionInfoDetailDto'
+        type: object
+      error:
+        $ref: '#/definitions/indraframework.IndraException'
+        type: object
+      policy:
+        $ref: '#/definitions/dto.OptionCancellationDto'
+        type: object
+    type: object
+  dto.OrderDetailDto:
+    properties:
+      ApplicantOrderId:
+        type: integer
+      ApplicantRefundRequestId:
+        type: integer
+      Confirmed:
+        type: boolean
+      Currency:
+        type: string
+      GeneralPolicies:
+        items:
+          type: string
+        type: array
+      Hotel:
+        $ref: '#/definitions/dto.HotelDto'
+        type: object
+      HotelID:
+        type: integer
+      IndraOrderId:
+        type: integer
+      MealPlan:
+        type: string
+      NonRefundable:
+        type: boolean
+      OrderId:
+        type: integer
+      PaidAmount:
+        type: number
+      Provider:
+        type: string
+      ProviderHotelId:
+        type: string
+      ProviderName:
+        type: string
+      ProviderOrderId:
+        type: string
+      ReferenceCode:
+        type: string
+      RefundRequestId:
+        type: integer
+      RefundStatus:
+        type: string
+      RefundableAmount:
+        type: number
+      RestrictedMarkupAmount:
+        type: integer
+      RestrictedMarkupType:
+        type: string
+      Rooms:
+        items:
+          $ref: '#/definitions/dto.OrderDetailRoomDto'
+        type: array
+      Status:
+        type: string
+      TotalPenaltyAmount:
+        type: number
+      TotalPrice:
+        type: integer
+      error:
+        $ref: '#/definitions/indraframework.IndraException'
+        type: object
+    type: object
+  dto.OrderDetailRoomDto:
+    properties:
+      Name:
+        type: string
+      NameEn:
+        type: string
+      OrderId:
+        type: integer
+      OrderRoomId:
+        type: integer
+      Price:
+        type: integer
+      PricePerNight:
+        type: integer
+    type: object
+  dto.OrderEnquiryItemDto:
+    properties:
+      destination:
+        type: string
+      destinationName:
+        type: string
+      items:
+        items:
+          $ref: '#/definitions/dto.OrderEnquiryItemOptionDto'
+        type: array
+      productProviderType:
+        type: string
+      providerId:
+        type: string
+    type: object
+  dto.OrderEnquiryItemOptionDto:
+    properties:
+      isRefundable:
+        type: boolean
+      paidAmount:
+        type: integer
+      passengerInformation:
+        $ref: '#/definitions/dto.OrderEnquiryItemOptionPassengerInformation'
+        type: object
+      referenceCode:
+        type: string
+      refundStatus:
+        type: string
+      refundableAmount:
+        type: integer
+      refundableStatus:
+        type: string
+      refundableType:
+        type: string
+      totalPenaltyAmount:
+        type: integer
+    type: object
+  dto.OrderEnquiryItemOptionPassengerInformation:
+    properties:
+      lastName:
+        type: string
+      lastNamePersian:
+        type: string
+      name:
+        type: string
+      namePersian:
+        type: string
+      title:
+        type: string
+    type: object
+  dto.OrderEnquiryResponseDto:
+    properties:
+      allowedRefundPaymentMethods:
+        items:
+          type: string
+        type: array
+      error:
+        $ref: '#/definitions/indraframework.IndraException'
+        type: object
+      items:
+        items:
+          $ref: '#/definitions/dto.OrderEnquiryItemDto'
+        type: array
+    type: object
+  dto.OrderPayByAccountResponseDto:
+    properties:
+      error:
+        $ref: '#/definitions/indraframework.IndraException'
+        type: object
+      requestId:
+        type: string
+      resultMessage:
+        type: string
+      transactionIds:
+        items:
+          type: string
+        type: array
+      transactionStatus:
+        type: string
+    type: object
+  dto.OrderRefundRequestDto:
+    properties:
+      jabamaOrderId:
+        type: integer
+      orderId:
+        type: string
+      refundRequestId:
+        type: integer
+    type: object
+  dto.OrderRefundResponseDto:
+    properties:
+      error:
+        $ref: '#/definitions/indraframework.IndraException'
+        type: object
+      orderId:
+        type: string
+      refundRequestId:
+        type: integer
+    type: object
+  dto.OrderStatusResponseDto:
+    properties:
+      error:
+        $ref: '#/definitions/indraframework.IndraException'
+        type: object
+      orderId:
+        type: string
+      status:
+        type: string
+    type: object
+  dto.RateRoomResponseDto:
+    properties:
+      error:
+        $ref: '#/definitions/indraframework.IndraException'
+        type: object
+      hotelId:
+        type: string
+      options:
+        items:
+          $ref: '#/definitions/dto.RoomOptionDto'
+        type: array
+      requestedRooms:
+        items:
+          $ref: '#/definitions/dto.RequestRoomDto'
+        type: array
+      sessionId:
+        type: string
+    type: object
+  dto.RequestRoomDto:
+    properties:
+      adults:
+        items:
+          type: integer
+        type: array
+      children:
+        items:
+          type: integer
+        type: array
+    type: object
+  dto.RoomCancellationPolicyDto:
+    properties:
+      GeneralPolicies:
+        items:
+          type: string
+        type: array
+      error:
+        $ref: '#/definitions/indraframework.IndraException'
+        type: object
+      nonRefundable:
+        type: boolean
+    type: object
+  dto.RoomDto:
+    properties:
+      extraCharge:
+        items:
+          type: object
+        type: array
+      name:
+        type: string
+      nameEn:
+        type: string
+      number:
+        type: integer
+      price:
+        type: integer
+      pricePerNight:
+        type: integer
+    type: object
+  dto.RoomOptionDto:
+    properties:
+      currency:
+        type: string
+      discountPercent:
+        type: integer
+      discountPrice:
+        type: integer
+      id:
+        type: string
+      mealPlan:
+        $ref: '#/definitions/dto.MealPlanTypeDto'
+        type: object
+      nonRefundable:
+        type: boolean
+      number:
+        type: integer
+      oldPrice:
+        type: integer
+      price:
+        type: integer
+      provider:
+        type: string
+      providerName:
+        type: string
+      rooms:
+        items:
+          $ref: '#/definitions/dto.RoomDto'
+        type: array
+    type: object
+  dto.SearchDateDto:
+    properties:
+      end:
+        type: string
+      start:
+        type: string
+    type: object
+  dto.SearchDto:
+    properties:
+      city:
+        type: string
+      date:
+        $ref: '#/definitions/dto.SearchDateDto'
+        type: object
+      hotel-types:
+        items:
+          type: string
+        type: array
+      keyword:
+        type: string
+      page-number:
+        type: integer
+      page-size:
+        type: integer
+      price:
+        $ref: '#/definitions/dto.SearchPriceDto'
+        type: object
+      region:
+        items:
+          type: string
+        type: array
+      rooms:
+        items:
+          $ref: '#/definitions/dto.RequestRoomDto'
+        type: array
+      score:
+        $ref: '#/definitions/dto.SearchScoreDto'
+        type: object
+      sessionId:
+        type: string
+      sort:
+        type: string
+      sort-direction:
+        type: boolean
+      stars:
+        items:
+          type: integer
+        type: array
+    type: object
+  dto.SearchPriceDto:
+    properties:
+      end:
+        type: integer
+      start:
+        type: integer
+    type: object
+  dto.SearchResponseBadgeDto:
+    properties:
+      icon:
+        type: string
+      name:
+        type: string
+    type: object
+  dto.SearchResponseDto:
+    properties:
+      error:
+        $ref: '#/definitions/indraframework.IndraException'
+        type: object
+      filters:
+        items:
+          $ref: '#/definitions/dto.FilterOutput'
+        type: array
+      result:
+        items:
+          $ref: '#/definitions/dto.SearchResponseHotelDto'
+        type: array
+      sorts:
+        items:
+          $ref: '#/definitions/dto.SortDto'
+        type: array
+      totalHits:
+        type: integer
+    type: object
+  dto.SearchResponseHotelDto:
+    properties:
+      amenities:
+        items:
+          type: string
+        type: array
+      badges:
+        items:
+          $ref: '#/definitions/dto.SearchResponseBadgeDto'
+        type: array
+      description:
+        type: string
+      discount:
+        type: integer
+      discountPrice:
+        type: integer
+      id:
+        type: string
+      image:
+        type: string
+      images:
+        items:
+          type: string
+        type: array
+      kind:
+        type: string
+      location:
+        $ref: '#/definitions/dto.SearchResponseLocationDto'
+        type: object
+      min_night:
+        type: integer
+      min_price:
+        type: number
+      name:
+        type: string
+      nameEn:
+        type: string
+      oldPrice:
+        type: integer
+      paymentType:
+        type: string
+      place_id:
+        type: string
+      pricePerNight:
+        type: number
+      rateReview:
+        $ref: '#/definitions/dto.SearchResponseRateReviewDto'
+        type: object
+      region:
+        type: string
+      reservation_type:
+        type: string
+      star:
+        type: integer
+      tags:
+        items:
+          type: string
+        type: array
+      type:
+        type: string
+      verified:
+        type: boolean
+    type: object
+  dto.SearchResponseLocationDto:
+    properties:
+      city:
+        type: string
+      cityEn:
+        type: string
+      geo:
+        $ref: '#/definitions/dto.SearchResponseLocationGeoDto'
+        type: object
+      province:
+        type: string
+    type: object
+  dto.SearchResponseLocationGeoDto:
+    properties:
+      lat:
+        type: number
+      lon:
+        type: number
+    type: object
+  dto.SearchResponseRateReviewDto:
+    properties:
+      count:
+        type: integer
+      score:
+        type: number
+    type: object
+  dto.SearchScoreDto:
+    properties:
+      end:
+        type: integer
+      start:
+        type: integer
+    type: object
+  dto.SetAmenityCategoryDto:
+    properties:
+      amenityCategoryId:
+        type: integer
+      amenityId:
+        type: integer
+    type: object
+  dto.SetAmenityIconDto:
+    properties:
+      amenityId:
+        type: integer
+      iconUrl:
+        type: string
+    type: object
+  dto.SetBadgeIconDto:
+    properties:
+      badgeId:
+        type: string
+      iconUrl:
+        type: string
+    type: object
+  dto.SetHotelFaqRequestDto:
+    properties:
+      faqList:
+        items:
+          $ref: '#/definitions/dto.HotelFAQDto'
+        type: array
+      faqTitle:
+        type: string
+      hotelId:
+        type: string
+    type: object
+  dto.SetHotelSeoRequestDto:
+    properties:
+      hotelId:
+        type: string
+      seoDetails:
+        $ref: '#/definitions/dto.HotelSeoDto'
+        type: object
+    type: object
+  dto.SortDto:
+    properties:
+      direction:
+        type: boolean
+      field:
+        type: string
+      name:
+        type: string
+    type: object
+  dto.SyncSomeHotelsDto:
+    properties:
+      hotel_ids:
+        items:
+          type: string
+        type: array
+    type: object
+  dto.SyncedHotelsDetail:
+    properties:
+      error:
+        $ref: '#/definitions/indraframework.IndraException'
+        type: object
+      notSyncedHotels:
+        items:
+          $ref: '#/definitions/dto.HotelSyncDetail'
+        type: array
+      syncedHotels:
+        items:
+          $ref: '#/definitions/dto.HotelSyncDetail'
+        type: array
+      totalHotels:
+        type: integer
+      totalNotSynced:
+        type: integer
+      totalSynced:
+        type: integer
+    type: object
+  dto.TaskRunningResult:
+    properties:
+      error:
+        $ref: '#/definitions/indraframework.IndraException'
+        type: object
+      message:
+        type: string
+      success:
+        type: boolean
+    type: object
+  dto.TokenDto:
+    properties:
+      error:
+        $ref: '#/definitions/indraframework.IndraException'
+        type: object
+      token:
+        type: string
+    type: object
+  dto.UpdateHotelsDto:
+    properties:
+      date:
+        type: string
+    type: object
+  dto.UpdateResultDto:
+    properties:
+      error:
+        $ref: '#/definitions/indraframework.IndraException'
+        type: object
+      items_count:
+        type: integer
+      message:
+        type: string
+      time_taken:
+        type: integer
+    type: object
+  indraframework.IndraException:
+    properties:
+      errorCode:
+        type: integer
+      message:
+        type: string
+      severity:
+        type: integer
+      technicalMessage:
+        type: string
+    type: object
+host: localhost:3000
+info:
+  contact:
+    email: info@jabama.com
+    name: info@jabama.com
+    url: jabama.com
+  description: This is a wrapper application on alibaba hotel service
+  license:
+    name: NONE
+    url: None
+  termsOfService: NONE
+  title: Hotel Engine Api
+  version: "1.0"
+paths:
+  /health:
+    get:
+      consumes:
+      - application/json
+      description: Api Health check
+      operationId: health
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: string
+      summary: Api Health check
+      tags:
+      - Health
+  /info:
+    get:
+      consumes:
+      - application/json
+      description: Info
+      operationId: Info
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: string
+      summary: Api Info
+      tags:
+      - Health
+  /v1/hotel/available:
+    post:
+      consumes:
+      - application/json
+      description: get order id if hotel is available
+      operationId: available
+      parameters:
+      - description: get order id if hotel is available
+        in: body
+        name: availableDto
+        required: true
+        schema:
+          $ref: '#/definitions/dto.AvailableDto'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/dto.AvailableResponseDto'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/indraframework.IndraException'
+      summary: get order id if hotel is available
+      tags:
+      - Hotel - Order
+  /v1/hotel/delete-hotel-faq/{hotelId}/{faqId}:
+    delete:
+      consumes:
+      - application/json
+      description: delete hotel faq
+      operationId: DeleteHotelFaq
+      parameters:
+      - description: hotel id
+        in: path
+        name: hotelId
+        required: true
+        type: string
+      - description: faq id
+        in: path
+        name: faqId
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/dto.HotelDto'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/indraframework.IndraException'
+      summary: delete hotel faq
+      tags:
+      - Hotel - Admin
+  /v1/hotel/finalize-order:
+    post:
+      consumes:
+      - application/json
+      description: Finalize Order
+      operationId: FinalizeOrder
+      parameters:
+      - description: get hotel rooms
+        in: body
+        name: finalizeOrderDto
+        required: true
+        schema:
+          $ref: '#/definitions/dto.FinalizeOrderDto'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/dto.FinalizeOrderResponseDto'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/indraframework.IndraException'
+      summary: Finalize Order
+      tags:
+      - Hotel - Order
+  /v1/hotel/find-hotels:
+    post:
+      consumes:
+      - application/json
+      description: find a hotel from the db
+      operationId: FindHotels
+      parameters:
+      - description: the request body
+        in: body
+        name: pdpRequestDto
+        required: true
+        schema:
+          $ref: '#/definitions/dto.HotelInput'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/dto.FindHotelResponseDto'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/indraframework.IndraException'
+      summary: Get a hotel by id
+      tags:
+      - Hotel
+  /v1/hotel/find/{hotelId}:
+    get:
+      consumes:
+      - application/json
+      description: get hotel by id
+      operationId: GetHotelById
+      parameters:
+      - description: hotel id
+        in: path
+        name: hotelId
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/dto.HotelDto'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/indraframework.IndraException'
+      summary: get hotel by id
+      tags:
+      - Hotel - Admin
+  /v1/hotel/hotel-pdp:
+    post:
+      consumes:
+      - application/json
+      description: find a hotel from the db
+      operationId: GetHotelDetails
+      parameters:
+      - description: the request body
+        in: body
+        name: pdpRequestDto
+        required: true
+        schema:
+          $ref: '#/definitions/dto.HotelDetailsDto'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/dto.HotelPDPDto'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/indraframework.IndraException'
+      summary: Get a hotel by id
+      tags:
+      - Hotel
+  /v1/hotel/info:
+    post:
+      consumes:
+      - application/json
+      description: get hotel option Info
+      operationId: info
+      parameters:
+      - description: get hotel option info
+        in: body
+        name: infoDto
+        required: true
+        schema:
+          $ref: '#/definitions/dto.OptionInfoRequestDto'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/dto.OptionInfoResponseDto'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/indraframework.IndraException'
+      summary: get hotel option Info
+      tags:
+      - Hotel
+  /v1/hotel/list:
+    post:
+      consumes:
+      - application/json
+      description: get hotel lists
+      operationId: GetHotelsList
+      parameters:
+      - description: hotels list request dto
+        in: body
+        name: infoDto
+        required: true
+        schema:
+          $ref: '#/definitions/dto.HotelsPageRequestDto'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/dto.HotelsPageResponseDto'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/indraframework.IndraException'
+      summary: get hotel lists
+      tags:
+      - Hotel - Admin
+  /v1/hotel/order-detail/{id}:
+    get:
+      consumes:
+      - application/json
+      description: Get order detail
+      operationId: OrderDetail
+      parameters:
+      - description: order id
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/dto.OrderDetailDto'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/indraframework.IndraException'
+      summary: Get Order Detail
+      tags:
+      - Hotel - Order
+  /v1/hotel/order/confirm/{orderId}:
+    put:
+      consumes:
+      - application/json
+      description: confirm an order
+      operationId: ConfirmOrder
+      parameters:
+      - description: order id
+        in: path
+        name: orderId
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/dto.ConfirmResponseDto'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/indraframework.IndraException'
+      summary: confirm an order
+      tags:
+      - Hotel - Order
+  /v1/hotel/order/enquiry/{orderId}:
+    get:
+      consumes:
+      - application/json
+      description: get order enquiry
+      operationId: GetOrderEnquiry
+      parameters:
+      - description: order id
+        in: path
+        name: orderId
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/dto.OrderEnquiryResponseDto'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/indraframework.IndraException'
+      summary: get order enquiry
+      tags:
+      - Hotel - Order
+  /v1/hotel/order/pay-by-account/{orderId}:
+    put:
+      consumes:
+      - application/json
+      description: pay order by jabama account
+      operationId: PayByAccount
+      parameters:
+      - description: order id
+        in: path
+        name: orderId
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/dto.OrderPayByAccountResponseDto'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/indraframework.IndraException'
+      summary: pay order by jabama account
+      tags:
+      - Hotel - Order
+  /v1/hotel/order/refund:
+    post:
+      consumes:
+      - application/json
+      description: refund an order
+      operationId: RefundOrder
+      parameters:
+      - description: refund request dto
+        in: body
+        name: infoDto
+        required: true
+        schema:
+          $ref: '#/definitions/dto.OrderRefundRequestDto'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/dto.OrderRefundResponseDto'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/indraframework.IndraException'
+      summary: refund an order
+      tags:
+      - Hotel - Order
+  /v1/hotel/order/status/{orderId}:
+    get:
+      consumes:
+      - application/json
+      description: get order status
+      operationId: GetOrderStatus
+      parameters:
+      - description: order id
+        in: path
+        name: orderId
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/dto.OrderStatusResponseDto'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/indraframework.IndraException'
+      summary: get order status
+      tags:
+      - Hotel - Order
+  /v1/hotel/room-cancellation-policy/{hotelId}/{roomId}/{sessionId}:
+    get:
+      consumes:
+      - application/json
+      description: Get room cancellation policy
+      operationId: GetRoomCancellationPolicy
+      parameters:
+      - description: hotel id
+        in: path
+        name: hotelId
+        required: true
+        type: string
+      - description: room id
+        in: path
+        name: roomId
+        required: true
+        type: string
+      - description: session id
+        in: path
+        name: sessionId
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/dto.RoomCancellationPolicyDto'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/indraframework.IndraException'
+      summary: Get room cancellation policy
+      tags:
+      - Hotel
+  /v1/hotel/rooms:
+    post:
+      consumes:
+      - application/json
+      description: get hotel rooms
+      operationId: room
+      parameters:
+      - description: get hotel rooms
+        in: body
+        name: roomDto
+        required: true
+        schema:
+          $ref: '#/definitions/dto.HotelRoomsDto'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/dto.RateRoomResponseDto'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/indraframework.IndraException'
+      summary: get hotel rooms
+      tags:
+      - Hotel
+  /v1/hotel/rooms-by-session:
+    post:
+      consumes:
+      - application/json
+      description: get hotel rooms
+      operationId: RoomsWithSession
+      parameters:
+      - description: get hotel rooms
+        in: body
+        name: roomDto
+        required: true
+        schema:
+          $ref: '#/definitions/dto.HotelRoomsWithSessionDto'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/dto.RateRoomResponseDto'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/indraframework.IndraException'
+      summary: get hotel rooms
+      tags:
+      - Hotel
+  /v1/hotel/search:
+    post:
+      consumes:
+      - application/json
+      operationId: Search
+      parameters:
+      - description: the request body
+        in: body
+        name: searchDto
+        required: true
+        schema:
+          $ref: '#/definitions/dto.SearchDto'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/dto.SearchResponseDto'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/indraframework.IndraException'
+      summary: search available hotels
+      tags:
+      - Hotel
+  /v1/hotel/set-amenity-category:
+    put:
+      consumes:
+      - application/json
+      description: update amenity category
+      operationId: SetAmenityCategory
+      parameters:
+      - description: the request body
+        in: body
+        name: amenityIconDto
+        required: true
+        schema:
+          $ref: '#/definitions/dto.SetAmenityCategoryDto'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/dto.HotelAmenityDto'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/indraframework.IndraException'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/indraframework.IndraException'
+      summary: update amenity category
+      tags:
+      - Hotel - Admin
+  /v1/hotel/set-amenity-icon:
+    put:
+      consumes:
+      - application/json
+      description: update amenity icon
+      operationId: SetAmenityIcon
+      parameters:
+      - description: the request body
+        in: body
+        name: amenityIconDto
+        required: true
+        schema:
+          $ref: '#/definitions/dto.SetAmenityIconDto'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/dto.HotelAmenityDto'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/indraframework.IndraException'
+      summary: update amenity icon
+      tags:
+      - Hotel - Admin
+  /v1/hotel/set-hotel-faq:
+    put:
+      consumes:
+      - application/json
+      description: set hotel faq
+      operationId: SetHotelFaq
+      parameters:
+      - description: the request body
+        in: body
+        name: hotelFaqRequestDto
+        required: true
+        schema:
+          $ref: '#/definitions/dto.SetHotelFaqRequestDto'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/dto.HotelDto'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/indraframework.IndraException'
+      summary: set hotel faq
+      tags:
+      - Hotel - Admin
+  /v1/hotel/set-hotel-meta-tags:
+    put:
+      consumes:
+      - application/json
+      description: set hotel meta tags
+      operationId: SetHotelSeoTags
+      parameters:
+      - description: the request body
+        in: body
+        name: hotelSeoRequestDto
+        required: true
+        schema:
+          $ref: '#/definitions/dto.SetHotelSeoRequestDto'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/dto.HotelDto'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/indraframework.IndraException'
+      summary: set hotel meta tags
+      tags:
+      - Hotel - Admin
+  /v1/hotel/sync-cities/{secret}:
+    put:
+      description: sync all cities
+      operationId: sync-cities
+      parameters:
+      - description: the sync secret
+        in: path
+        name: secret
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/dto.CityDto'
+            type: array
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/indraframework.IndraException'
+      summary: sync cities
+      tags:
+      - Hotel - management
+  /v1/hotel/sync-elastic/{secret}:
+    put:
+      description: sync elastic
+      operationId: sync-elastic
+      parameters:
+      - description: the sync secret
+        in: path
+        name: secret
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/dto.TaskRunningResult'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/indraframework.IndraException'
+      summary: sync elastic
+      tags:
+      - Hotel - management
+  /v1/hotel/sync-hotels/{secret}:
+    put:
+      description: sync all hotels from provider
+      operationId: sync-all-hotels
+      parameters:
+      - description: the sync secret
+        in: path
+        name: secret
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/dto.TaskRunningResult'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/indraframework.IndraException'
+      summary: sync all hotels
+      tags:
+      - Hotel - management
+  /v1/hotel/sync-some-hotels:
+    put:
+      consumes:
+      - application/json
+      description: sync all given hotels from provider
+      operationId: sync-some
+      parameters:
+      - description: the request body
+        in: body
+        name: searchDto
+        required: true
+        schema:
+          $ref: '#/definitions/dto.SyncSomeHotelsDto'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/dto.UpdateResultDto'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/indraframework.IndraException'
+      summary: sync some hotels
+      tags:
+      - Hotel - management
+  /v1/hotel/synced-hotel:
+    get:
+      consumes:
+      - application/json
+      description: get synced hotels
+      operationId: synced-hotels
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/dto.SyncedHotelsDetail'
+      summary: get synced hotels
+      tags:
+      - Hotel - management
+  /v1/hotel/update-and-sync-elastic/{secret}:
+    put:
+      description: Update And Sync Elastic
+      operationId: update-and-sync-elastic
+      parameters:
+      - description: the sync secret
+        in: path
+        name: secret
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/dto.TaskRunningResult'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/indraframework.IndraException'
+      summary: Update And Sync Elastic
+      tags:
+      - Hotel - management
+  /v1/hotel/update-hotels:
+    put:
+      consumes:
+      - application/json
+      description: Update all the hotels from provider
+      operationId: update-all
+      parameters:
+      - description: the request body
+        in: body
+        name: searchDto
+        required: true
+        schema:
+          $ref: '#/definitions/dto.UpdateHotelsDto'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/dto.TaskRunningResult'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/indraframework.IndraException'
+      summary: Update all the hotels
+      tags:
+      - Hotel - management
+  /v1/load-inner-types:
+    get:
+      consumes:
+      - application/json
+      description: this method does not do anything. it just contains the inner objects of other method's responses
+      operationId: LoadInnerTypes
+      parameters:
+      - description: UserName
+        in: path
+        name: username
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/dto.AvailableRoomDto'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/dto.HotelPlaceDto'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/dto.RoomOptionDto'
+        "402":
+          description: Payment Required
+          schema:
+            $ref: '#/definitions/dto.SearchDateDto'
+        "403":
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/dto.SearchPriceDto'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/dto.SearchScoreDto'
+        "405":
+          description: Method Not Allowed
+          schema:
+            $ref: '#/definitions/dto.FilterOutput'
+        "406":
+          description: Not Acceptable
+          schema:
+            $ref: '#/definitions/dto.FilterDto'
+        "407":
+          description: Proxy Authentication Required
+          schema:
+            $ref: '#/definitions/dto.AvailableRoomAdultDto'
+        "408":
+          description: Request Timeout
+          schema:
+            $ref: '#/definitions/dto.AvailableRoomChildrenDto'
+        "409":
+          description: Conflict
+          schema:
+            $ref: '#/definitions/dto.AvailableRoomPassportDto'
+        "410":
+          description: Gone
+          schema:
+            $ref: '#/definitions/dto.SearchResponseHotelDto'
+        "411":
+          description: Length Required
+          schema:
+            $ref: '#/definitions/dto.RequestRoomDto'
+        "412":
+          description: Precondition Failed
+          schema:
+            $ref: '#/definitions/dto.SearchResponseLocationDto'
+        "413":
+          description: Request Entity Too Large
+          schema:
+            $ref: '#/definitions/dto.SearchResponseRateReviewDto'
+        "414":
+          description: Request URI Too Long
+          schema:
+            $ref: '#/definitions/dto.SearchResponseLocationGeoDto'
+        "415":
+          description: Unsupported Media Type
+          schema:
+            $ref: '#/definitions/dto.RoomDto'
+        "416":
+          description: Requested Range Not Satisfiable
+          schema:
+            $ref: '#/definitions/dto.MealPlanTypeDto'
+        "417":
+          description: Expectation Failed
+          schema:
+            $ref: '#/definitions/dto.OptionInfoDetailDto'
+        "418":
+          description: I'm a teapot
+          schema:
+            $ref: '#/definitions/dto.OptionInfoDetailRoomDto'
+        "419":
+          schema:
+            $ref: '#/definitions/dto.OptionInfoDetailRestrictedMarkupDto'
+        "420":
+          schema:
+            $ref: '#/definitions/dto.OptionCancellationDto'
+        "421":
+          description: Misdirected Request
+          schema:
+            $ref: '#/definitions/dto.OrderDetailRoomDto'
+        "422":
+          description: Unprocessable Entity
+          schema:
+            $ref: '#/definitions/dto.HotelDto'
+        "423":
+          description: Locked
+          schema:
+            $ref: '#/definitions/dto.OrderEnquiryItemDto'
+        "424":
+          description: Failed Dependency
+          schema:
+            $ref: '#/definitions/dto.OrderEnquiryItemOptionDto'
+        "425":
+          description: Too Early
+          schema:
+            $ref: '#/definitions/dto.OrderEnquiryItemOptionPassengerInformation'
+        "426":
+          description: Upgrade Required
+          schema:
+            $ref: '#/definitions/dto.HotelSyncDetail'
+        "427":
+          schema:
+            $ref: '#/definitions/dto.HotelBadgeDto'
+        "428":
+          description: Precondition Required
+          schema:
+            $ref: '#/definitions/dto.SearchResponseBadgeDto'
+        "429":
+          description: Too Many Requests
+          schema:
+            $ref: '#/definitions/dto.HotelSeoDto'
+        "430":
+          schema:
+            $ref: '#/definitions/dto.HotelFAQDto'
+        "431":
+          description: Request Header Fields Too Large
+          schema:
+            $ref: '#/definitions/dto.HotelFAQDetailsDto'
+      summary: this method does not do anything. it just contains the inner objects of other method's responses
+  /v1/public/amenities:
+    get:
+      description: get all amenities
+      operationId: Amenities
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/dto.HotelAmenityDto'
+            type: array
+      summary: get all amenities
+      tags:
+      - Public
+  /v1/public/amenity-category:
+    get:
+      description: delete amenity categories
+      operationId: GetAmenityCategories
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/dto.AmenityCategoriesResponse'
+      summary: get amenity categories
+      tags:
+      - Public - Amenity Category
+    post:
+      consumes:
+      - application/json
+      description: create amenity category
+      operationId: CreateAmenityCategory
+      parameters:
+      - description: create category dto
+        in: body
+        name: catDto
+        required: true
+        schema:
+          $ref: '#/definitions/dto.AmenityCategoryDto'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/dto.AmenityCategoryDto'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/indraframework.IndraException'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/indraframework.IndraException'
+      summary: create amenity category
+      tags:
+      - Public - Amenity Category
+    put:
+      description: update amenity category
+      operationId: UpdateAmenityCategory
+      parameters:
+      - description: update category dto
+        in: body
+        name: catDto
+        required: true
+        schema:
+          $ref: '#/definitions/dto.AmenityCategoryDto'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/dto.AmenityCategoryDto'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/indraframework.IndraException'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/indraframework.IndraException'
+      summary: update amenity category
+      tags:
+      - Public - Amenity Category
+  /v1/public/amenity-category/{id}:
+    delete:
+      description: delete amenity category
+      operationId: DeleteAmenityCategory
+      parameters:
+      - description: category id
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/dto.DeleteAmenityCategoryResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/indraframework.IndraException'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/indraframework.IndraException'
+      summary: delete amenity category
+      tags:
+      - Public - Amenity Category
+    get:
+      description: get amenity category
+      operationId: GetAmenityCategory
+      parameters:
+      - description: category id
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/dto.AmenityCategoryDto'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/indraframework.IndraException'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/indraframework.IndraException'
+      summary: get amenity category
+      tags:
+      - Public - Amenity Category
+  /v1/public/badges:
+    get:
+      description: get all badges
+      operationId: Badges
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/dto.HotelBadgeDto'
+            type: array
+      summary: get all badges
+      tags:
+      - Public - Badges
+  /v1/public/child-age-ranges:
+    get:
+      description: get all ChildAgeRanges
+      operationId: ChildAgeRanges
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/dto.ChildAgeRangeDto'
+            type: array
+      summary: get all ChildAgeRanges
+      tags:
+      - Public
+  /v1/public/cities:
+    get:
+      description: get all cities
+      operationId: Cities
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/dto.CityDto'
+            type: array
+      summary: get all cities
+      tags:
+      - Public
+  /v1/public/filters:
+    get:
+      description: get all Filters
+      operationId: Filters
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/dto.FiltersDto'
+      summary: get all Filters
+      tags:
+      - Public
+  /v1/public/places:
+    get:
+      description: get all Places
+      operationId: Places
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/dto.HotelPlaceDto'
+            type: array
+      summary: get all Places
+      tags:
+      - Public
+  /v1/public/provider-balance:
+    get:
+      description: get provider balance
+      operationId: GetProviderBalance
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/dto.BalanceDto'
+      summary: get provider balance
+      tags:
+      - Public
+  /v1/public/provider-token:
+    get:
+      description: get provider token
+      operationId: GetProviderToken
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/dto.TokenDto'
+      summary: get provider token
+      tags:
+      - Public
+  /v1/public/set-badge-icon:
+    put:
+      consumes:
+      - application/json
+      description: Update badge icon
+      operationId: SetBadgeIcon
+      parameters:
+      - description: the request body
+        in: body
+        name: badgeIconDto
+        required: true
+        schema:
+          $ref: '#/definitions/dto.SetBadgeIconDto'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/dto.HotelBadgeDto'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/indraframework.IndraException'
+      summary: Update badge icon
+      tags:
+      - Public - Badges
+  /v1/public/sorts:
+    get:
+      description: get all Sorts
+      operationId: Sorts
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/dto.SortDto'
+            type: array
+      summary: get all Sorts
+      tags:
+      - Public
+swagger: "2.0"
+x-extension-openapi:
+  example: value on a json format
